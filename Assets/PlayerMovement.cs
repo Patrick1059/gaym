@@ -7,11 +7,24 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
+    public GameObject bonePrefab;
+    public float lastFired;
+    public float fireRate = 0.5f;
+    private float nextFire = 0.0f;
+
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
+        if ((Input.GetButton("Fire1")) && Time.time > nextFire)
+        {
+                nextFire = Time.time + fireRate;
+                GameObject kbone = Instantiate(bonePrefab, transform.position, Quaternion.identity);
+                kbone.GetComponent<Rigidbody2D>().velocity = new Vector2(1.0f,0.0f);
+                Debug.Log(fireRate);
+                Debug.Log(Time.time);
+        }
     }
     void FixedUpdate()
     {
