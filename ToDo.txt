@@ -1,0 +1,11 @@
+Fix Shooting
+Projectile Interactions
+Camera follow player
+Items
+Room interactions
+Better Ideas
+Enemies
+Cry
+Bitcoin mining
+art
+music?

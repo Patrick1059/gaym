@@ -29,8 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //updates based on framerate
     {
+        
         ProcessInputs();
-        target = transform.GetComponent<cam>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z)); //this is broken, we need to somehow let Player interact with camera. Do weeven have a camera object?
+        target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z)); //this is broken, we need to somehow let Player interact with camera. Do we even have a camera object?
         Vector3 difference = target - rb.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         float distance = difference.magnitude;
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
                 nextFire = Time.time + fireRate;
                 GameObject kbone = Instantiate(bonePrefab, transform.position, Quaternion.identity);
                 kbone.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-                kbone.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+                kbone.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed; 
         }
     }
     void Move()
