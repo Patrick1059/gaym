@@ -31,13 +31,13 @@ public class PlayerMovement : MonoBehaviour
     {
         
         ProcessInputs();
-        target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z)); //this is broken, we need to somehow let Player interact with camera. Do we even have a camera object?
-        Vector3 difference = target - rb.transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        float distance = difference.magnitude;
-        Vector2 direction = difference / distance;
-        direction.Normalize(); //all these calculations should probably be elsewhere
-        fire(direction, rotationZ);
+        // target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z)); //this is broken, we need to somehow let Player interact with camera. Do we even have a camera object?
+        // Vector3 difference = target - rb.transform.position;
+        // float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        // float distance = difference.magnitude;
+        //Vector2 direction = difference / distance;
+        //direction.Normalize(); //all these calculations should probably be elsewhere
+        // fire(direction, rotationZ);
     }
     void FixedUpdate() //updates a set number of times per (frame?)
     {
@@ -49,15 +49,15 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
-    void fire(Vector2 direction, float rotationZ){
-         if ((Input.GetButton("Fire1")) && Time.time > nextFire)
-        {
-                nextFire = Time.time + fireRate;
-                GameObject kbone = Instantiate(bonePrefab, transform.position, Quaternion.identity);
-                kbone.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-                kbone.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed; 
-        }
-    }
+    // void fire(Vector2 direction, float rotationZ){
+    //      if ((Input.GetButton("Fire1")) && Time.time > nextFire)
+    //     {
+    //             nextFire = Time.time + fireRate;
+    //             GameObject kbone = Instantiate(bonePrefab, transform.position, Quaternion.identity);
+    //             kbone.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+    //             kbone.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed; 
+    //     }
+    //}
     void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
