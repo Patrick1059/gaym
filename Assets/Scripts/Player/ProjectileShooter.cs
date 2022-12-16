@@ -17,7 +17,7 @@ public class ProjectileShooter : MonoBehaviour
     public float projectileLifetime = 2f;
 
     // A timer that tracks how much time has passed since the player last shot a projectile
-    private float fireTimer = 0f;
+    private float fireTimer = 2f;
 
     // Update is called once per frame
     void Update()

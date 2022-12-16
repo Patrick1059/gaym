@@ -1,11 +1,9 @@
-Fix Shooting
+Fix Shooting (cant shoot as soon as click, hard to explain just try to shhot and see what I mean)
 Projectile Interactions
-Camera follow player
 Items
 Room interactions
 Better Ideas
 Enemies
-Cry
-Bitcoin mining
 art
 music?
+sounds
