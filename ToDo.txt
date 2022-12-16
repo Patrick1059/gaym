@@ -1,5 +1,4 @@
 Fix Shooting (cant shoot as soon as click, hard to explain just try to shhot and see what I mean)
-Projectile Interactions
 Items
 Room interactions
 Better Ideas
@@ -7,3 +6,5 @@ Enemies
 art
 music?
 sounds
+Add player select
+Add more playable characters (Ollie, Moona, Gura, Calliope)

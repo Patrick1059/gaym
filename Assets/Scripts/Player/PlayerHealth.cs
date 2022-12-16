@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         // Get a reference to the audio source component
         audioSource = GetComponent<AudioSource>();
-        Debug.Log(audioSource);
     }
 
     public void TakeDamage(int damage)
