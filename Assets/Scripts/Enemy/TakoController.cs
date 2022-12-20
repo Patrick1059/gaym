@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class TakoController : MonoBehaviour
 {
     // The speed at which the enemy moves
     public float speed = 5f;
@@ -30,16 +30,19 @@ public class EnemyController : MonoBehaviour
     private bool inContactWithPlayer = false;
 
     void Awake()
-    {
-        // Get a reference to the player's health script
-        playerHealth = player.GetComponent<PlayerHealth>();
+{
+    // Find the player GameObject in the scene using its tag
+    player = GameObject.FindGameObjectWithTag("Player");
 
-        // Get a reference to the audio source component
-        audioSource = GetComponent<AudioSource>();
+    // Get a reference to the player's health script
+    playerHealth = player.GetComponent<PlayerHealth>();
 
-        // Set the initial value of the damage timer
-        damageTimer = damageInterval;
-    }
+    // Get a reference to the audio source component
+    audioSource = GetComponent<AudioSource>();
+
+    // Set the initial value of the damage timer
+    damageTimer = damageInterval;
+}
 
     void Update()
     {
