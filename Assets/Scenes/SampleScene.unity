@@ -244,10 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 335189728}
-  bonePrefab: {fileID: 7699917418986449189, guid: 8ab7be1968508eb42aa397704bfa0892, type: 3}
-  lastFired: 0
-  fireRate: 1
-  projectileSpeed: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
