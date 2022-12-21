@@ -9,6 +9,7 @@ public class ZombieController : MonoBehaviour
     public int damage; // The amount of damage that the game object will deal upon contact with the enemy
     public float attackInterval = 0.5f;
     private float timeSinceLastAttack;
+    public float projectileLifetime = 2f;
 
     private GameObject closestEnemy; // A reference to the closest enemy game object
 
@@ -33,6 +34,7 @@ public class ZombieController : MonoBehaviour
                 MoveTowardsEnemy();
             }
         }
+        Destroy(gameObject, projectileLifetime);
     }
 
     // This function finds the closest enemy game object
